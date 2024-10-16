@@ -13,7 +13,21 @@ import image9 from "@/assets/images/image9.jpg"
 import image10 from "@/assets/images/image10.jpg"
 import image11 from "@/assets/images/image11.jpg"
 import image12 from "@/assets/images/image12.jpg"
+import gsap from 'gsap'
+import { useGSAP } from '@gsap/react'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 const WorkSection = () => {
+  const mouseMove = (e)=>{
+    // console.log(e)
+    const tl = gsap.timeline();
+    tl.to(".image-animation",{
+      top:e.clientY/10,
+      duration:0.5
+    })
+  }
 
   return (
     <div className='min-h-screen px-[7vw] relative justify-center flex py-[8vh]'>
@@ -21,7 +35,7 @@ const WorkSection = () => {
       <div className=' w-1/3 flex items-center '>
         
       </div>
-      <div className='w-2/3 '>
+      <div className='w-2/3 ' onMouseMove={mouseMove}>
       {
         [{name: "pimpan", year: "2024", image:image1},
           {name: "youki", year: "2023", image:image2},
@@ -36,10 +50,10 @@ const WorkSection = () => {
           {name: "BOUGE TON COQ", year: "2019", image:image11},
           {name: "ARCHITECTURE FESTIVAL", year: "2015", image:image12},
         ].map((item, index)=>(
-          <div key={index} className='group'>
-            <h1  className='uppercase cursor-pointer text-[4vw] font-heading flex justify-start gap-3 opacity-20 font-[100] shover:left-3 duration-300 pl-0 hover:pl-3 hover:opacity-100 leading-tight'>{item.name}<span className='text-[3vw]'>{item.year}</span></h1>
-            <div className='fixed left-10  top-[40vh] hidden group-hover:block'>
-        <Image src={item.image} alt='' className='w-96' />
+          <div key={index} className='group ' >
+            <h1  className='uppercase cursor-pointer text-[4vw] font-heading flex justify-start gap-3 opacity-20 font-[100] shover:left-3 duration-300 pl-0 hover:pl-1 hover:opacity-100 leading-tight'>{item.name}<span className='text-[3vw]'>{item.year}</span></h1>
+            <div className='fixed left-10  top-[40vh] hidden group-hover:flex'>
+        <Image src={item.image} alt='' className='w-[25vw] relative image-animation' />
         </div>
           </div>
         ))

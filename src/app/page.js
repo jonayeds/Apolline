@@ -1,5 +1,6 @@
 
 import HeroSection from "@/components/HeroSection";
+import IntroSection from "@/components/IntroSection";
 import WorkSection from "@/components/WorkSection";
 
 
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection/>
       </div>
       <WorkSection/>
+      <IntroSection/>
     </div>
   );
 }
