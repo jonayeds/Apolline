@@ -16,29 +16,32 @@ import image12 from "@/assets/images/image12.jpg"
 const WorkSection = () => {
 
   return (
-    <div className='min-h-screen px-[8vw] relative justify-center flex py-[8vh]'>
-      <div className='fixed left-10  top-[40vh]'>
-        <Image src={image1} alt='' className='w-96' />
-        </div>
+    <div className='min-h-screen px-[7vw] relative justify-center flex py-[8vh]'>
+     
       <div className=' w-1/3 flex items-center '>
         
       </div>
       <div className='w-2/3 '>
       {
-        [{name: "pimpan", year: "2024"},
-          {name: "youki", year: "2023"},
-          {name: "hammigua", year: "2023"},
-          {name: "my happy dog", year: "2023"},
-          {name: "save the night", year: "2023"},
-          {name: "ifm", year: "2022"},
-          {name: "marius aurenti", year: "2022"},
-          {name: "apo", year: "2021"},
-          {name: "SOUFFLEURS D`IMAGES", year: "2020"},
-          {name: "STUDIO VALMY", year: "2020"},
-          {name: "BOUGE TON COQ", year: "2019"},
-          {name: "ARCHITECTURE FESTIVAL", year: "2015"},
+        [{name: "pimpan", year: "2024", image:image1},
+          {name: "youki", year: "2023", image:image2},
+          {name: "hammigua", year: "2023",image:image3 },
+          {name: "my happy dog", year: "2023", image:image4 },
+          {name: "save the night", year: "2023", image:image5},
+          {name: "ifm", year: "2022", image:image6},
+          {name: "marius aurenti", year: "2022", image:image7},
+          {name: "apo", year: "2021", image:image8},
+          {name: "SOUFFLEURS D`IMAGES", year: "2020", image:image9},
+          {name: "STUDIO VALMY", year: "2020", image:image10},
+          {name: "BOUGE TON COQ", year: "2019", image:image11},
+          {name: "ARCHITECTURE FESTIVAL", year: "2015", image:image12},
         ].map((item, index)=>(
-          <h1 key={index} className='uppercase cursor-pointer text-[4vw] font-heading flex justify-start gap-3 opacity-20 font-[100] shover:left-3 duration-300 pl-0 hover:pl-3 hover:opacity-100 leading-tight'>{item.name}<span className='text-[3vw]'>{item.year}</span></h1>
+          <div key={index} className='group'>
+            <h1  className='uppercase cursor-pointer text-[4vw] font-heading flex justify-start gap-3 opacity-20 font-[100] shover:left-3 duration-300 pl-0 hover:pl-3 hover:opacity-100 leading-tight'>{item.name}<span className='text-[3vw]'>{item.year}</span></h1>
+            <div className='fixed left-10  top-[40vh] hidden group-hover:block'>
+        <Image src={item.image} alt='' className='w-96' />
+        </div>
+          </div>
         ))
       }
           

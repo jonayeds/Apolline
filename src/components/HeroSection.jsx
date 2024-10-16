@@ -47,8 +47,8 @@ const HeroSection = () => {
 
       gsap.to(".cursor-animate",{
         opacity:1,
-          left: e.screenX-400,
-          top: e.screenY-350,
+          left: e.screenX,
+          top: e.screenY,
           duration: 0.5,
           stagger:0.1,
           ease: "power2.out",
