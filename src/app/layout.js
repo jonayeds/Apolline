@@ -1,8 +1,8 @@
-import localFont from "next/font/local";
+
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 
-
+import {ReactLenis} from "@/utils/lenis"
 
 
 export const metadata = {
@@ -13,12 +13,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
+     <ReactLenis root>
+     <body
       className="bg-[#1E1E1C] min-h-screen text-[#D5D4D3]"
       >
         <NavBar/>
         {children}
       </body>
+     </ReactLenis>
     </html>
   );
 }
