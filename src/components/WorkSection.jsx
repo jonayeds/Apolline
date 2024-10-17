@@ -51,7 +51,7 @@ const WorkSection = () => {
           {name: "ARCHITECTURE FESTIVAL", year: "2015", image:image12},
         ].map((item, index)=>(
           <div key={index} className='group ' >
-            <h1  className='uppercase cursor-pointer text-[4vw] font-heading flex justify-start gap-3 opacity-20 font-[100] shover:left-3 duration-300 pl-0 hover:pl-1 hover:opacity-100 leading-tight'>{item.name}<span className='text-[3vw]'>{item.year}</span></h1>
+            <h1  className='uppercase cursor-pointer text-[4vw] font-heading flex justify-start gap-3 opacity-10 font-[100] shover:left-3 duration-300 pl-0 hover:pl-1 group-hover:opacity-100 leading-tight'>{item.name}<span className='text-[3vw]'>{item.year}</span></h1>
             <div className='fixed left-10  top-[40vh] hidden group-hover:flex'>
         <Image src={item.image} alt='' className='w-[25vw] relative image-animation' />
         </div>
